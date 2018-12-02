@@ -1,0 +1,52 @@
+# depslib dependency file v1.0
+1543577381 source:/home/franz/Studium/Semester 4/Inf2/UEB/UEB/datetime.c
+	<stdio.h>
+	<stdlib.h>
+	"tools.h"
+	"datastructure.h"
+	"datetime.h"
+	"cds.h"
+
+1539534104 /home/franz/Studium/Semester 4/Inf2/UEB/UEB/main.h
+
+1543505097 /home/franz/Studium/Semester 4/Inf2/UEB/UEB/tools.h
+
+1542894687 /home/franz/Studium/Semester 4/Inf2/UEB/UEB/datastructure.h
+
+1543571368 /home/franz/Studium/Semester 4/Inf2/UEB/UEB/datetime.h
+
+1543430843 source:/home/franz/Studium/Semester 4/Inf2/UEB/UEB/main.c
+	<stdio.h>
+	"datastructure.h"
+	"datetime.h"
+	"tools.h"
+	"menu.h"
+	"cds.h"
+
+1543505583 source:/home/franz/Studium/Semester 4/Inf2/UEB/UEB/tools.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tools.h"
+	"datastructure.h"
+
+1541608426 source:/home/franz/Studium/Semester 4/Inf2/UEB/UEB/menu.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"tools.h"
+	"datastructure.h"
+	"datetime.h"
+
+1543786871 source:/home/franz/Studium/Semester 4/Inf2/UEB/UEB/cds.c
+	<stdio.h>
+	<stdlib.h>
+	"tools.h"
+	"datastructure.h"
+	"datetime.h"
+	"cds.h"
+
+1541608422 /home/franz/Studium/Semester 4/Inf2/UEB/UEB/menu.h
+
+1543430843 /home/franz/Studium/Semester 4/Inf2/UEB/UEB/cds.h
+
