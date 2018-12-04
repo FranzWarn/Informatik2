@@ -35,6 +35,9 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="cds.h" />
+		<Unit filename="database.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="datastructure.h" />
 		<Unit filename="datetime.c">
 			<Option compilerVar="CC" />
