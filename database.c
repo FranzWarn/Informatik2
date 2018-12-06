@@ -6,8 +6,8 @@
 #include "datetime.h"
 #include "cds.h"
 
-static void saveCD(TCD *CD);
-static void saveSong(TSong *Song);
+static void saveCD(TCD *CD,FILE *fp);
+static void saveSong(TSong *Song, TCD *CD,FILE *fp);
 
 void save()
 {
@@ -22,36 +22,66 @@ void save()
       printf("Datei zum speichern konnte nicht geöffnet werden!\n");
    else
    {
-      fprintf("<Data>");
-      for(i = 0; i <= countCD; i++)
+      fprintf(fp,"<Data>\n");
+      for(i = 0; i < countCD; i++)
       {
-         saveCD(CD);
+         saveCD(CD+i, fp);
       }
 
    }
-   fprintf("</Data>");
+   fprintf(fp,"</Data>\n");
    fclose(fp);
 }
 
-static void saveCD(TCD *CD)
+static void saveCD(TCD *CD,FILE *fp)
 {
    int i;
-   fprintf(" <CD>");
-   fprintf("  <Title>%s</Title>", CD->Titel);
-   fprintf("  <Interpret>%s</Interpret>", CD->Interpret);
-   fprintf("  <YearOfAppearance>%i</YearOfAppearance>", CD->ReleaseYear);
-   for(i = 0; i<= CD->Number; i++)
+   fprintf(fp," <CD>\n");
+   fprintf(fp,"  <Title>%s</Title>\n", CD->Titel);
+   if(CD->Interpret)
+      fprintf(fp,"  <Interpret>%s</Interpret>\n", CD->Interpret);
+   fprintf(fp,"  <YearOfAppearance>%i</YearOfAppearance>\n", CD->ReleaseYear);
+   for(i = 0; i< CD->Number; i++)
    {
-      fprintf("  <Song>");
-      saveSong(CD->Songs);
+      fprintf(fp,"  <Song>\n");
+      saveSong(CD->Songs+i, CD, fp);
    }
-   fprintf(" </CD>");
+   fprintf(fp," </CD>\n");
 }
 
-static void saveSong(TSong *Song)
+static void saveSong(TSong *Song,TCD *CD,FILE *fp)
 {
-   fprintf("   <Title>%s</Titel>", Song->Titel);
-   fprintf("   <Interpret>%s</Interpret>", Song->Interpret);
-   fprintf("   <Duration>%02d:%02d:%02d</Duration>", Song->Length->Hour, Song->Length->Minute, Song->Length->Second);
-   fprintf("   </Song>");
+   fprintf(fp,"   <Title>%s</Titel>\n", Song->Titel);
+   if(CD->Interpret == NULL)
+      fprintf(fp,"   <Interpret>%s</Interpret>\n", Song->Interpret);
+   fprintf(fp,"   <Duration>%02d:%02d:%02d</Duration>\n", Song->Length.Hour, Song->Length.Minute, Song->Length.Second);
+   fprintf(fp,"   </Song>\n");
+}
+
+void load();
+{
+   TCD *CD;
+   FILE *fp;
+
+   fp = fopen("cds.xml", "rb");
+
+   if(fp == NULL)
+   {
+      printf("Datei konnte nicht geladen werden!");
+      return;
+   }
+   else
+   {
+      char Input[100];
+      *Input = '\0';
+      fscanf(fp, "%99[^\n]", Input);
+      if(*Input)
+      {
+         while(*Input == " ")
+         {
+            *Input++;
+         }
+         if(strncmp(Input, "<Daten>", 7) == 0)
+      }
+   }
 }

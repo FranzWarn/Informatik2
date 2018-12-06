@@ -4,6 +4,7 @@
 #include "tools.h"
 #include "menu.h"
 #include "cds.h"
+#include "database.h"
 
 void inputTime();
 
@@ -33,7 +34,7 @@ int main()
          case 4: searchSong();   break;
          case 5: sortCDs();      break;
          case 6: listCDs();      break;
-         case 7: return 0;       break;
+         case 7: save();         break;
       }
 
     } while (Input != 7);

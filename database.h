@@ -1,0 +1,6 @@
+#ifndef DATABASE_H_INCLUDED
+#define DATABASE_H_INCLUDED
+
+void save();
+
+#endif // DATABASE_H_INCLUDED

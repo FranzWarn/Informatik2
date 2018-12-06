@@ -38,6 +38,7 @@
 		<Unit filename="database.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="database.h" />
 		<Unit filename="datastructure.h" />
 		<Unit filename="datetime.c">
 			<Option compilerVar="CC" />
