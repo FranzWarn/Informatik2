@@ -58,12 +58,15 @@ static void saveSong(TSong *Song,TCD *CD,FILE *fp)
    fprintf(fp,"   </Song>\n");
 }
 
-void load();
+void load()
 {
-   TCD *CD;
-   FILE *fp;
+//   TCD *CD;
 
-   fp = fopen("cds.xml", "rb");
+   FILE *fp;
+   fp = fopen("cds.xml", "r");
+   int len = 200;
+   char *Input = malloc(len*sizeof(char));
+   int i = 0;
 
    if(fp == NULL)
    {
@@ -72,16 +75,14 @@ void load();
    }
    else
    {
-      char Input[100];
-      *Input = '\0';
-      fscanf(fp, "%99[^\n]", Input);
-      if(*Input)
+      while((fgets(Input, len, fp)) != EOF)
       {
-         while(*Input == " ")
-         {
-            *Input++;
-         }
-         if(strncmp(Input, "<Daten>", 7) == 0)
+         printf("%s", Input);
+
       }
    }
+   fclose(fp);
+  // printf("%s", *Input);
+   waitForEnter();
 }
+

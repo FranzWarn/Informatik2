@@ -15,7 +15,7 @@
 
 1543571368 /home/franz/Studium/Semester 4/Inf2/UEB/UEB/datetime.h
 
-1544103006 source:/home/franz/Studium/Semester 4/Inf2/UEB/UEB/main.c
+1544546627 source:/home/franz/Studium/Semester 4/Inf2/UEB/UEB/main.c
 	<stdio.h>
 	"datastructure.h"
 	"datetime.h"
@@ -51,7 +51,7 @@
 
 1543430843 /home/franz/Studium/Semester 4/Inf2/UEB/UEB/cds.h
 
-1544104425 source:/home/franz/Studium/Semester 4/Inf2/UEB/UEB/database.c
+1544712030 source:/home/franz/Studium/Semester 4/Inf2/UEB/UEB/database.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -60,5 +60,5 @@
 	"datetime.h"
 	"cds.h"
 
-1544102985 /home/franz/Studium/Semester 4/Inf2/UEB/UEB/database.h
+1544546611 /home/franz/Studium/Semester 4/Inf2/UEB/UEB/database.h
 

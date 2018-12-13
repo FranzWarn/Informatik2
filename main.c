@@ -22,6 +22,7 @@ int Input = 0;
 
 int main()
 {
+   load();
    do
    {
       Input = getmenu(titel,menu,7);
